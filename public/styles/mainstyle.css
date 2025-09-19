@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.backgroundimg1 {
+    min-height: 100vh;
+    background: url(/AgriConnect/public/img/img3.png) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.backgroundimg2 {
+    min-height: 100vh;
+    background: url(/AgriConnect/public/img/img4.png) no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+}
+
+.backgroundimg3 {
+    min-height: 100vh;
+    background: url(/AgriConnect/public/img/img5.png) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.backgroundimg4 {
+    min-height: 100vh;
+    background: url(/AgriConnect/public/img/img6.png) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.backgroundimg5 {
+    min-height: 100vh;
+    background: url(/AgriConnect/public/img/img7.png) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.sidebar {
+    position: fixed;
+    width: 280px;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(40px);
+    border-right: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 6px 15px;
+    transition: 0.6s;
+    z-index: 1001;
+}
+
+.sidebar.inactive {
+    width: 80px;
+    transition: 0.6s;    
+}
+
+.sidebar .logo-menu {
+     display: flex;
+     align-items: center;
+     width: 100%;
+     height: 70px;
+}
+
+.sidebar .logo-menu .logo {
+    font-size: 25px;
+    color: #fff;
+    pointer-events: none;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.sidebar.inactive .logo-menu .logo {
+    opacity: 0;
+    transition-delay: 0.03s;
+}
+
+.sidebar .logo-menu .toggle-btn {
+    position: absolute;
+    left: 90%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: .01s;
+    opacity: 0;
+}
+
+.sidebar.inactive .logo-menu .toggle-btn {
+    left: 50%;
+    opacity: 1;
+}
+
+.sidebar .list {
+    margin-top: 10px;
+}
+
+.list .list-item {
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+    line-height: 50px;
+}
+
+.list .list-item a {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.list .list-item.inactive a, .list .list-item a:hover  {
+    background: rgba(255,255,255,0.2);
+}
+
+.list .list-item a i {
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .link-name {
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.sidebar.inactive .link-name {
+    opacity: 0;
+    pointer-events: all;
+    transition-delay: calc(0.001s * var(--i));
+}
+
+.header {
+    width: 100%;
+    height: 65px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    background: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+}
+
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header-content #searchBox {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    width: 260px;
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.clear-search {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+    color: #888;
+}
+
+.header-content .btn-search {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.header-content .btn-search:hover {
+    opacity: 0.8;
+}
+
+.content {
+    margin-left: 280px;
+    margin-top: 50px;
+    padding: 10px;
+    transition: margin-left 0.6s;
+}
+
+.sidebar.inactive ~ .content {
+    margin-left: 100px;
+}
+
+.mainbgcolor {
+    background: rgba(255, 255, 255, 0.8);
+    padding-bottom: 25px ;
+    padding-top: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
+    margin: 2% auto;
+    text-align: center;
+}
+
+/*Dashboard*/
+
+.parag {
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.list-head {
+    text-align: left;
+    padding-left: 21px;
+    font-weight: bold;
+    color: green;
+}
+
+.list-subhead {
+    text-align: left;
+    padding-left: 50px;
+}
+
+/*Milk Trade*/
+
+.milkimg {
+    height: 350px; 
+    width: 250px; 
+    border-radius: 25px;
+    margin-right: 20px;
+}
+
+.btn-primary, .btn-secondary, .btn-danger {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    color: white;
+    transition: opacity 0.3s;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+}
+
+.btn-secondary {
+    background-color: #FFC107;
+}
+
+.btn-danger {
+    background-color: #f44336;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-danger:hover {
+    opacity: 0.8;
+}
+
+
+/*Guide Style*/
+
+.crpgimg {
+    height: 200px;
+    width: 180px;
+    border-radius: 25px;
+}
+
+.rounded-box {
+    height: 280px;
+    padding: 21px 25PX;
+    width: 230px;
+    display: flex;
+    background: rgb(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: border-radius 0.5s, box-shadow 0.5s;
+    z-index: 1;
+  }
+
+.rounded-box:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
+a:hover {
+
+    list-style-type: none;
+}
+
+ul,li {
+    list-style-type:none;
+}
+
+.allgrid {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+.allgrid a {
+    color: black;
+    font-family: bolder;
+    text-decoration: none;
+}
+
+.allgridsty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Crop Inside code*/
+
+.guide-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+.guide-section.reverse {
+    flex-direction: row-reverse;
+    margin-right: 20px;
+}
+
+.guide-img {
+    height: 300px;
+    width: 40%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.guide-text {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.guide-text h3 {
+    color: green;
+    margin-bottom: 15px;
+}
+
+.guide-text p {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*Land Lease Style*/
+
+.icon-btn {
+    display: inline-block;
+    margin: 5px;
+    font-size: 24px;
+    color: #4CAF50;
+    text-decoration: none;
+    border: 2px solid #4CAF50;
+    border-radius: 50%;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.icon-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.aligned {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 20px;
+}
+
+.landimg {
+    height: 270px; 
+    width: 250px; 
+    border-radius: 25px;
+    margin-right: 20px;
+}
+
+.landtxt {
+    text-align: left;
+    max-width: 700px;
+}
+
+.landcont {
+    /*line - 238*/
+    font-size: 18px;
+    line-height: 1cm;
+}
+
+/* Highlight Style*/
+
+.highlight {
+    background-color: rgb(237, 173, 52);
+}
+
+/* Account Settings Style */
+
+.container h1 {
+    text-align: left;
+    padding: 20px;
+    padding-left: 30px;
+}
+
+.account-settings {
+    max-width: 650px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.account-settings h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2A9D8F;
+}
+
+.account-settings .form-group {
+    margin-bottom: 20px;
+}
+
+.account-settings label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.account-settings input[type="text"],
+.account-settings input[type="email"],
+.account-settings input[type="password"] {
+    width: calc(100% - 10px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.account-settings input[type="text"]:focus,
+.account-settings input[type="email"]:focus,
+.account-settings input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.account-settings .btn-save,
+.account-settings .btn-delete {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.account-settings .btn-delete {
+    background-color: #f44336;
+}
+
+.account-settings .btn-save:hover {
+    background-color: #45a049;
+}
+
+.account-settings .btn-delete:hover {
+    background-color: #e53935;
+}
+
+.account-settings .btn-save:disabled,
+.account-settings .btn-delete:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

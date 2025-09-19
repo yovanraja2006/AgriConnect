@@ -1,0 +1,157 @@
+/* Main Container and Flex Layout */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+}
+
+/* Chart Container Styles */
+.chart-container {
+    width: 30%; /* Reduce the width to make the canvas smaller */
+    text-align: center;
+    padding-right: 20px;
+}
+
+.chart-container canvas {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    max-height: 200px;
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+    background-color: #fff;
+}
+
+/* Legend Container Styles */
+.legend-container {
+    width: 65%;
+    padding-left: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.legend-container h3 {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-size: 22px;
+    color: #333;
+}
+
+.legend-container ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the list items horizontally */
+}
+
+.legend-container ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left inside the list item */
+    width: 100%; /* Make the list item take full width */
+    max-width: 300px; /* Optional: limit the width of the list item */
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+.legend-container ul li span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chart-container, .legend-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .chart-container canvas {
+        max-height: 150px; /* Further reduce the height on small screens */
+    }
+}
+
+/* New Main Section Colors */
+.mainbgcolor h2 {
+    color: #2A9D8F; /* Dark teal for main heading */
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mainbgcolor h3 {
+    color: #E76F51; /* Coral red for subheadings */
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mainbgcolor h4 {
+    color: #F4A261; /* Sandy brown for minor headings */
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* Enhanced Paragraph Text */
+.parag {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #264653; /* Darker teal */
+}
+
+/* List Styling */
+.parag ul, .parag ol {
+    margin-left: 40px;
+    text-align: left;
+}
+
+.parag ul li::before {
+    content: "•"; 
+    color: #2A9D8F; /* Teal bullet points */
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+.parag ol li {
+    margin-bottom: 10px;
+}
+
+.parag ul li, .parag ol li {
+    margin-bottom: 5px;
+}
+
+.parag a {
+    color: #2A9D8F; /* Teal for links */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.parag a:hover {
+    text-decoration: underline;
+}
+
+/* Shadow and Box Effects */
+.parag, .parag ul, .parag ol {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(250, 250, 250, 0.8);
+    margin-bottom: 20px;
+}

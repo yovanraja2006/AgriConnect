@@ -1,0 +1,43 @@
+.container {
+    width: 60%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+navig {
+    margin-bottom: 20px;
+}
+
+navig a {
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    color: #45a049;
+}
+
+navig a i {
+    margin-right: 8px;
+}
+
+navig a:hover, .delete-account:hover, .logout:hover{
+    text-decoration: none;
+    color: black;
+}
+
+navig a.active {
+    color: rgb(254, 123, 0);
+}
+
+.delete-account, .logout {
+    float: auto;
+    color: #dc3545;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}

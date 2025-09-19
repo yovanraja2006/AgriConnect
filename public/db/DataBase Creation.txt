@@ -1,0 +1,50 @@
+CREATE DATABASE agriconnect;
+
+CREATE TABLE users (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_login DATETIME DEFAULT NULL,
+    token VARCHAR(32) DEFAULT NULL,
+    reset_token VARCHAR(64) DEFAULT NULL,
+    token_expiry DATETIME DEFAULT NULL
+);
+
+CREATE TABLE adminid (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_login DATETIME DEFAULT NULL,
+    token VARCHAR(32) DEFAULT NULL,
+    reset_token VARCHAR(64) DEFAULT NULL,
+    token_expiry DATETIME DEFAULT NULL
+);
+
+
+CREATE TABLE land_leases (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    owner VARCHAR(255),
+    address VARCHAR(255),
+    direction VARCHAR(255),
+    phone_number VARCHAR(15),
+    image_url VARCHAR(255),
+    map_url VARCHAR(255)
+);
+
+CREATE TABLE milk_products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    product_code VARCHAR(100) NOT NULL UNIQUE,
+    processing_method VARCHAR(100) NOT NULL,
+    fat_content VARCHAR(50) NOT NULL,
+    protein VARCHAR(50) NOT NULL,
+    lactose VARCHAR(50) NOT NULL,
+    expiry_date VARCHAR(50) NOT NULL,
+    phone_number VARCHAR(15) NOT NULL,
+    image VARCHAR(255) NOT NULL
+);
